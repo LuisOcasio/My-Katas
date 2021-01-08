@@ -4,13 +4,15 @@ const solution = (number) => {
   while (number > count) {
     arr.push(count++);
   }
-  let content = [0];
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  let multiplesOf = arr.map((element, i) => {
-    if (element % 3 === 0 || element % 5 === 0) {
-      content.push(element);
+
+  const content = [0];
+  const reducer = (acc, cv) => acc + cv;
+
+  arr.map((number) => {
+    if (number % 3 === 0 || number % 5 === 0) {
+      content.push(number);
     } else {
-      return 'not a multiple';
+      ('not a multiple');
     }
   });
   return content.reduce(reducer);
